@@ -4,9 +4,15 @@ This is a starter project for you to use to start your Python database projects.
 
 ## Setup
 
+
 ```shell
 # Clone the repository to your local machine
-; git clone git@github.com/makersacademy/databases-in-python-project-starter.git YOUR_PROJECT_NAME
+; git clone git@github.com:makersacademy/databases-in-python-project-starter.git YOUR_PROJECT_NAME
+
+# Or, if you don't have SSH keys set up
+; git clone https://github.com/makersacademy/databases-in-python-project-starter.git YOUR_PROJECT_NAME
+
+# Enter the directory
 ; cd YOUR_PROJECT_NAME
 
 # Install dependencies and set up the virtual environment
