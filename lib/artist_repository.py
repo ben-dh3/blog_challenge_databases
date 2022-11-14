@@ -1,7 +1,6 @@
 from lib.artist import Artist
 
-
-class ArtistRepository():
+class ArtistRepository:
 
     # We initialise with a database connection
     def __init__(self, connection):

@@ -1,4 +1,4 @@
-class Artist():
+class Artist:
     # We initialise with all of our attributes
     # Each column in the table should have an attribute here
     def __init__(self, id, name, genre):
