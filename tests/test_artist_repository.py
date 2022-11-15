@@ -1,6 +1,5 @@
 from lib.artist_repository import ArtistRepository
 from lib.artist import Artist
-from lib.album import Album
 
 """
 When we call ArtistRepository#all

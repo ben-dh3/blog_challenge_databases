@@ -9,7 +9,6 @@ def test_artist_constructs():
     assert artist.name == "Test Artist"
     assert artist.genre == "Test Genre"
 
-
 """
 We can format artists to strings nicely
 """
