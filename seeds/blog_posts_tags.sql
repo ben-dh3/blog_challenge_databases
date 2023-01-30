@@ -1,18 +1,5 @@
--- -------------------------------------------------------------
--- TablePlus 4.5.0(396)
---
--- https://tableplus.com/
---
--- Database: blog
--- Generation Time: 2022-05-11 14:52:14.0840
--- -------------------------------------------------------------
-
-
 DROP TABLE IF EXISTS "public"."posts";
 -- This script only contains the table creation statements and does not fully represent the table in the database. It's still missing: indices, triggers. Do not use it as a backup.
-
--- Sequence and defined type
-CREATE SEQUENCE IF NOT EXISTS posts_id_seq;
 
 -- Table Definition
 CREATE TABLE "public"."posts" (
@@ -33,9 +20,6 @@ CREATE TABLE "public"."posts_tags" (
 DROP TABLE IF EXISTS "public"."tags";
 -- This script only contains the table creation statements and does not fully represent the table in the database. It's still missing: indices, triggers. Do not use it as a backup.
 
--- Sequence and defined type
-CREATE SEQUENCE IF NOT EXISTS tags_id_seq;
-
 -- Table Definition
 CREATE TABLE "public"."tags" (
     "id" SERIAL,
@@ -43,14 +27,20 @@ CREATE TABLE "public"."tags" (
     PRIMARY KEY ("id")
 );
 
-INSERT INTO "public"."posts" ("id", "title") VALUES
-(1, 'How to use Git'),
-(2, 'Fun classes'),
-(3, 'Using a REPL'),
-(4, 'My weekend in Edinburgh'),
-(5, 'The best chocolate cake EVER'),
-(6, 'A foodie week in Spain'),
-(7, 'SQL basics');
+INSERT INTO "public"."posts" ("title") VALUES
+('How to use Git'),
+('Fun classes'),
+('Using a REPL'),
+('My weekend in Edinburgh'),
+('The best chocolate cake EVER'),
+('A foodie week in Spain'),
+('SQL basics');
+
+INSERT INTO "public"."tags" ("name") VALUES
+('coding'),
+('travel'),
+('cooking'),
+('education');
 
 INSERT INTO "public"."posts_tags" ("post_id", "tag_id") VALUES
 (1, 1),
@@ -63,12 +53,6 @@ INSERT INTO "public"."posts_tags" ("post_id", "tag_id") VALUES
 (6, 3),
 (2, 4),
 (3, 4);
-
-INSERT INTO "public"."tags" ("id", "name") VALUES
-(1, 'coding'),
-(2, 'travel'),
-(3, 'cooking'),
-(4, 'education');
 
 ALTER TABLE "public"."posts_tags" ADD FOREIGN KEY ("tag_id") REFERENCES "public"."tags"("id");
 ALTER TABLE "public"."posts_tags" ADD FOREIGN KEY ("post_id") REFERENCES "public"."posts"("id");
